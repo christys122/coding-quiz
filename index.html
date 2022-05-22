@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coding Quiz</title>
+
+    <link rel ="stylesheet" href = "./assets/stylesheet.css">
+
+</head>
+
+<body>
+    <header>
+        <nav>
+            <!--nav buttons on top evvery page--> 
+            <a href="HighScore">High Scores</a>
+            <P>Timer</P>
+        </nav>
+    </header>
+    <!--1st page will disappear on timer-->
+    <div class = Intro>
+        <h1>Coding Quiz Challenge</h1>
+        <p>Try to answer the following code-related question within the time limit.  Keep in mind incorrect answers will penailize you by 10 seconds!</p>
+        <button>Start Quiz</button>
+    </div>
+    <!--Questions go here will change once answered-->
+    <div class="questions">
+        <h2>Question:</h2>
+            <button id = btn1></button>
+            <button id = btn2></button>
+            <button id = btn3></button>
+            <button id = btn4></button>
+        <h3 id = response></h3>    
+    </div>
+
+    <div class = Results>
+        <h1>All Done!</h1>
+    </div>
+
+    <div class = Score>
+        <h1>High Score</h1>
+    </div>
+
+<script src = "assets/jscript.js"></script>
+</body>
+</html>

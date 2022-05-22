@@ -1,0 +1,30 @@
+
+*{
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+header nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    
+}
+
+div {
+    margin: 30px 60px 30px 60px;
+    padding: 60px;
+    text-align: center;
+
+}
+
+.intro p {
+    font-size: larger;
+    font-weight: bold;
+}
+
+button {
+    color:rgb(8, 47, 60)
+}
+
+
