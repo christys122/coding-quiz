@@ -13,33 +13,43 @@
 <body>
     <header>
         <nav>
-            <!--nav buttons on top evvery page--> 
-            <a href="HighScore">High Scores</a>
-            <P>Timer</P>
+            <!--nav buttons on top every page--> 
+            <a href="#highscore">High Scores</a>
+            <p>Timer:</p><p id = timer>Timer</p>
         </nav>
     </header>
     <!--1st page will disappear on timer-->
-    <div class = Intro>
+    <div class = intro>
         <h1>Coding Quiz Challenge</h1>
         <p>Try to answer the following code-related question within the time limit.  Keep in mind incorrect answers will penailize you by 10 seconds!</p>
-        <button>Start Quiz</button>
+        <button id = startBtn>Start Quiz</button>
     </div>
     <!--Questions go here will change once answered-->
-    <div class="questions">
-        <h2>Question:</h2>
+    <div class = questions>
+        <h1>Question:</h1>
             <button id = btn1></button>
             <button id = btn2></button>
             <button id = btn3></button>
             <button id = btn4></button>
-        <h3 id = response></h3>    
+        <h3 id = response>""</h3>    
     </div>
 
-    <div class = Results>
+    <div class = results>
         <h1>All Done!</h1>
+        <p> Your final score is</p>
+        <input id = finalscore></input>
+        <br></br>
+        <p>Initials:</p>
+        <input id = initials></input>
+        <button id = sub>Submit</button>
     </div>
 
-    <div class = Score>
-        <h1>High Score</h1>
+    <div id = scoreId class = score>
+        <h1>High Scores</h1>
+        <input id = highscore></input>
+        <br></br>
+        <button>Go Back</button>
+        <button>Clear highscores</button>
     </div>
 
 <script src = "assets/jscript.js"></script>

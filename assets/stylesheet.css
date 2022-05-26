@@ -15,7 +15,25 @@ div {
     margin: 30px 60px 30px 60px;
     padding: 60px;
     text-align: center;
+}
 
+.questions {
+/*invisible until called*/
+visibility: visible;
+
+}
+
+.score {
+    visibility: visible;
+}
+    
+div .questions {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.intro {
+    visibility: visible;
 }
 
 .intro p {
@@ -23,8 +41,34 @@ div {
     font-weight: bold;
 }
 
-button {
-    color:rgb(8, 47, 60)
+.intro button {
+    background-color:rgb(8, 47, 60)
 }
 
+.questions button{
+    background-color: rgb(8, 47, 60)
+}
+
+
+
+div .score
+{   display: flex;
+    flex-wrap: wrap;
+}
+
+.results {
+    visibility: visible;
+}
+
+div .results {
+    display: inline;
+}
+ 
+div h3 {
+    color:darkcyan
+}
+
+div #score {
+    
+}
 
