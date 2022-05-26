@@ -5,8 +5,8 @@ var questions = []
 var highScoreEl = document.querySelector("#highscore");
 var timerEl = document.querySelector("#timer");
 // button click to start quiz and to move to next set of questions
-var startBtnEl = document.querySelector("#startBtn");
-var closeIntro = document.querySelector(".intro")
+//var startBtnEl = document.querySelector("#startBtn");
+//var closeIntro = document.querySelector(".intro")
 
 //var startQuiz = document.querySelector("")
 
@@ -19,35 +19,43 @@ var highScoreHandler = function() {
      }
  };
 
- //[WORKS]timer in top right corner
- var counter = 75
- var countdown = function() {
-   timerEl.innerHTML = counter;
-   counter--;
-   if(counter === 0) {
-     alert("Time's Up!");
-     clearInterval (startCountdown);
-   };
- };
 
- var startCountdown = setInterval(countdown, 1000);
+ 
+
 
 
 //createtask(showQuestions)
 
-//Intro Page (.intro) (button)
+
 
 //var taskButtonHandler = function() {
  // get target element from event sample below to start quiz:
-startBtnEl.addEventListener("click", function() {
+
+
+var startBtnEl= document.querySelector("#startBtn");
+var closeIntro = document.querySelector("#intro");
+var startQuizHandler = function (){
   alert("it works!");
-  closeIntro.visible=false;
-  startCountdown
+  //closeIntro.visible=hidden;
+
+   //[WORKS]timer in top right corner with click
+  var counter = 75
+  var countdown = function(event) {
+    //event.preventDefault();
+    timerEl.innerHTML = counter;
+    counter--;
+    if(counter === 0) {
+      alert("Time's Up!");
+           clearInterval (startCountdown);
+    };
+  };
+ 
+  var startCountdown = setInterval(countdown, 1000);
 
   //showQuestions ()
-});
+};
 
-
+startBtnEl.addEventListener("click", startQuizHandler);
 //  var targetEl = event.target;
 
 //  if (targetEl.matches(".edit-btn")) {
@@ -69,19 +77,18 @@ startBtnEl.addEventListener("click", function() {
 
 
 
-//High scores on left = link to High scores "page"
-
-
+//*High scores on left = link to High scores "page"
+ 
 //page will be visible for list of high scores only
 //scores are stored in local storage - and recalled when High Scores
 //button is clicked
 //there should also be a return to main button on this page
 
-//timer on right 
-//
+//*timer on right 
+//timer working -need to set up to start on button click
 
 //Intro section will show first then disappear
-//buttom to start quiz
+//*button to start quiz
 //will cause all but header to disappear
 //will cause 1st set of questions to appear,
 //will cause timer to begin
@@ -100,3 +107,5 @@ startBtnEl.addEventListener("click", function() {
 //after last question, last "page" will appear and show message
 //and score, with opportunity to add initials
 //initials and score will be saved to local storage
+
+//Return to Intro Page (.intro) (button)

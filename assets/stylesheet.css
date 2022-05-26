@@ -23,6 +23,13 @@ visibility: visible;
 
 }
 
+div .questions {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+
+}
+
 .score {
     visibility: visible;
 }
@@ -41,12 +48,21 @@ div .questions {
     font-weight: bold;
 }
 
-.intro button {
-    background-color:rgb(8, 47, 60)
+button {
+    outline: none;
+    border: none;
+    display: inline-block;
+    padding: 10px 15px;
+    font-size:large;
+    color: whitesmoke;
+    border-radius: 10px;
+    position: relative;
+    background: rgb(12, 89, 114);
+    
 }
 
-.questions button{
-    background-color: rgb(8, 47, 60)
+button:hover {
+    box-shadow: 0 3px rgb(51, 47, 47);
 }
 
 
