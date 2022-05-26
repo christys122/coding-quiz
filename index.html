@@ -19,35 +19,35 @@
         </nav>
     </header>
     <!--1st page will disappear on timer-->
-    <div class = intro>
-        <h1>Coding Quiz Challenge</h1>
-        <p>Try to answer the following code-related question within the time limit.  Keep in mind incorrect answers will penailize you by 10 seconds!</p>
-        <button id = startBtn>Start Quiz</button>
+    <div class = "intro">
+        <h1></h1>
+        <p></p>
+        <button id = "startBtn"></button>
     </div>
     <!--Questions go here will change once answered-->
-    <div class = questions>
-        <h1>Question:</h1>
-        <ul>What is Javascript?</ul>
-           <li><button id = btn1>Very Hard!</button></li>
-           <li><button id = btn2>A programming language for Windows</button></li>
-           <li><button id = btn3>I don't even know</button></li>
-           <li><button id = btn4>a programming language to add functionality to websites</button></li>
-        <h3 id = response>""</h3>    
+    <div class = "questions">
+        <h2 class ="question">This is h2</h2>
+        <ul class = "answer-list" id = "answers"></ul>
+           <li class = "answer1"><button id = "btn1">Answer1</button></li>
+           <li><button id = "btn2">A programming language for Windows</button></li>
+           <li><button id = "btn3">I don't even know</button></li>
+           <li><button id = "btn4">a programming language to add functionality to websites</button></li>
+        <h3 id = "response"></h3>    
     </div>
 
-    <div class = results>
+    <div class = "results">
         <h1>All Done!</h1>
         <p> Your final score is</p>
-        <input id = finalscore></input>
+        <input id = "finalscore"></input>
         <br></br>
         <p>Initials:</p>
-        <input id = initials></input>
-        <button id = sub>Submit</button>
+        <input id = "initials"></input>
+        <button id = "sub">Submit</button>
     </div>
 
-    <div id = scoreId class = score>
+    <div id = "scoreId" class = "score">
         <h1>High Scores</h1>
-        <input id = highscore></input>
+        <input id = "highscore"></input>
         <br></br>
         <button>Go Back</button>
         <button>Clear highscores</button>

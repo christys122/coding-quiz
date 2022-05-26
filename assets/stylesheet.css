@@ -39,6 +39,9 @@ div .questions {
     flex-wrap: wrap;
 }
 
+.question {
+    font-size: large;
+}
 .intro {
     visibility: visible;
 }

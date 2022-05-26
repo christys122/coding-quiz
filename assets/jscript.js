@@ -4,6 +4,10 @@ var questions = []
 
 var highScoreEl = document.querySelector("#highscore");
 var timerEl = document.querySelector("#timer");
+//var headerEl = document.querySelector(".intro h3")
+//create question button
+
+
 // button click to start quiz and to move to next set of questions
 //var startBtnEl = document.querySelector("#startBtn");
 //var closeIntro = document.querySelector(".intro")
@@ -20,28 +24,31 @@ var highScoreHandler = function() {
  };
 
 
- 
-
-
-
-//createtask(showQuestions)
-
 
 
 //var taskButtonHandler = function() {
  // get target element from event sample below to start quiz:
 
+//Intro Section -- StartPageHandler
+var editIntroEl = document.querySelector("h1")
+editIntroEl.textContent = ("Coding Quiz Challenge heak yeah!")
+editIntroEl.className = (".intro")
+var editIntroParaEl = document.querySelector(".intro p")
+editIntroParaEl.textContent = ("Try to answer the following code-related question within the time limit.  Keep in mind incorrect answers will penalize you by 10 seconds!")
+editIntroParaEl.className = (".intro p")
+//start quiz button
+var startBtnEl = document.querySelector(".intro button")
+//startBtnEl = document.createElement("button");
+startBtnEl.textContent = ("Start Quiz in JS") 
+startBtnEl.className = ("button")
 
-var startBtnEl= document.querySelector("#startBtn");
-var closeIntro = document.querySelector("#intro");
+//var startBtnEl = document.querySelector("startBtnEl");
 var startQuizHandler = function (){
   alert("it works!");
-  //closeIntro.visible=hidden;
-
+ 
    //[WORKS]timer in top right corner with click
   var counter = 75
   var countdown = function(event) {
-    //event.preventDefault();
     timerEl.innerHTML = counter;
     counter--;
     if(counter === 0) {
@@ -51,11 +58,51 @@ var startQuizHandler = function (){
   };
  
   var startCountdown = setInterval(countdown, 1000);
-
-  //showQuestions ()
 };
 
 startBtnEl.addEventListener("click", startQuizHandler);
+
+//end countdown section
+
+  //Start Question and Answers ()
+
+
+//create 4 answers -- from module
+
+
+var AddAnswer = document.querySelector("#answers");
+//answersEl.document.createElement("button");
+var createAnswerHandler = function() {
+var answersEl = document.createElement("li");
+answersEl.textContent = "Answer One";
+answersEl.className = "button";
+//answersEl.textContent = "Answer Two";
+//answersEl.className = "button";
+AddAnswer.appendChild(answersEl);
+};
+startBtnEl.addEventListener("click", createAnswerHandler);
+
+
+//actionContainerEl.appendChild(answersEl);
+
+//var createQuestionEl = function() {
+//var actionContainerEl = document.createElement("div");
+//actionContainerEl.className = (".questions");
+//create Question
+//var questionEl = document.elementSelector("ul");
+var questionEl = document.createElement("div");
+questionEl.className = "questions";
+questionEl.innerHTML = "<ul class ='question'>'</ul>";
+//questionEl.textContent = "Question One"
+//actionContainerEl.appendChild(questionEl);
+
+//createQuestionEl();
+//};
+
+
+
+
+
 //  var targetEl = event.target;
 
 //  if (targetEl.matches(".edit-btn")) {
@@ -68,7 +115,11 @@ startBtnEl.addEventListener("click", startQuizHandler);
 //    deleteTask(taskId);
 //  }
 
+//create questions
+// create edit button
 
+
+//answers
 
 
 //reset form fields?? may not be needed
