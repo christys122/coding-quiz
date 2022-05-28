@@ -67,8 +67,6 @@ var quizContainer = document.getElementById("quests-content");
  
   function generateQuiz(questions, quizContainer){
 
-  //function showQuestions(questions, quizContainer){
-
 // combine questions and answers  
 var output = [];
 var answers;
@@ -94,42 +92,25 @@ output.push(
 //shows questions and answers on page
   quizContainer.innerHTML = output.join('')
 
-  // var showQuestions = function() {
-  //   var 
-  //   output.appendChild(quizContainer);
-  
+    
 }
-// var quizQuestionsEl = document.createElement("button");
-// quizQuestionsEl.textContent = answers.join('');
-// quizQuestionsEl.className = "button";
 
-
-//   quizContainerEl.appendChild(quizQuestionsEl);
 };
-
-//showQuestions(questions, quizContainer); not needed?
-
-// button click to start quiz and to move to next set of questions
-//var startBtnEl = document.querySelector("#startBtn");
-//var closeIntro = document.querySelector(".intro")
-//var startQuiz = document.querySelector("")
 
 // enter high score and initials after completion
 
 function highScoreHandler() {
   var scoreInput = document.querySelector("input[name ='highscore']").value;
+  value = output
   var initialsInput = document.querySelector("input[name='initials']").value;
+  
+  f
   if (scoreInput === "" || initialsInput == "") {
     alert("You need to take the quiz to view a high score");
     return false;
   }
 }
- // }
-
-
-
-//var taskButtonHandler = function() {
- // get target element from event sample below to start quiz:
+ 
 
 //Intro Section shows first on page -- need to disappear
 //var StartPageHandler
@@ -147,7 +128,7 @@ editIntroParaEl.className = (".intro p")
 startBtnEl.textContent = ("Start Timer") 
 startBtnEl.className = ("button")
 
-//
+//select where to put quesitons on DOM
 questContentEl = document.querySelector("#quests-content")
 questContentEl.addEventListener("click", generateQuiz);
 
@@ -212,59 +193,6 @@ function showResults(questions, quizContainer, resultsContainer){
   }
 
 }
-
-
-
-// var AddAnswer = document.querySelector("#answers");
-// //answersEl.document.createElement("button");
-// var createAnswerHandler = function() {
-// var answersEl = document.createElement("li");
-// answersEl.textContent = "Question Instead?";
-// answersEl.className = "button";
-// var allAnswersEl = document.createElement("div");
-// allAnswersEl.className = "button";
-// allAnswersEl.
-// allAnswersEl.innerHTML = "<h2 class='question'>" + 'Question InnerHTML' + "</h3>";
-// AddAnswer.appendChild(answersEl);
-
-
-//};     
-//startBtnEl.addEventListener("click", createAnswerHandler);
-
-
-//actionContainerEl.appendChild(answersEl);
-
-//var createQuestionEl = function() {
-//var actionContainerEl = document.createElement("div");
-//actionContainerEl.className = (".questions");
-//create Question
-//var questionEl = document.elementSelector("ul");
-// var questionEl = document.createElement("div");
-// questionEl.className = "questions";
-// questionEl.innerHTML = "<ul class ='question'>'</ul>";
-//questionEl.textContent = "Question One"
-//actionContainerEl.appendChild(questionEl);
-
-//createQuestionEl();
-//};
-
-
-
-//  var targetEl = event.target;
-
-//  if (targetEl.matches(".edit-btn")) {
-//    console.log("edit", targetEl);
-//    var taskId = targetEl.getAttribute("data-task-id");
-//    editTask(taskId);
-//  } else if (targetEl.matches(".delete-btn")) {
-//    console.log("delete", targetEl);
-//    var taskId = targetEl.getAttribute("data-task-id");
-//    deleteTask(taskId);
-//  }
-
- 
-
-
 
 
 //on any buttom click the "response" will appear with right or wrong"
