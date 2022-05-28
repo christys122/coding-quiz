@@ -4,100 +4,157 @@ var questions = []
 
 var highScoreEl = document.querySelector("#highscore");
 var timerEl = document.querySelector("#timer");
-//var headerEl = document.querySelector(".intro h3")
-//create question button
 
-var questions = [
+var quizContainerEl = document.createElement("div");
+var quizContainer = document.querySelector("#quests-content");
+var resultsContainer = document.getElementById("results");
+
+//questions variable
+
+var Myquestions = [
   {
-    Question: "What is Javascript",
+    question: "What is Javascript",
 
-    Answers: {
-     answer1: "A Programming Lanquage",
-     answer2: "Hard as heck",
-     answer3: "Worth Learning",
-     answer4: "You can Do"
+    answers: {
+     a: "A Programming Lanquage",
+     b: "Hard as heck",
+     c: "Worth Learning",
+     d: "You can Do"
     },
 
-    correctAnswer: "answer1"
+    correctAnswer: "a"
   },
   {
-    Question: "What does it all mean?",
+    question: "What does it all mean?",
 
-    Answers: {
-     answer1: "A Programming Lanquage",
-     answer2: "Hard as heck",
-     answer3: "Worth Learning",
-     answer4: "You can Do"
+    answers: {
+     a: "A Programming Lanquage",
+     b: "Hard as heck",
+     c: "Worth Learning",
+     d: "You can Do"
     },
 
-    correctAnswer: "answer3"
+    correctAnswer: "c"
   },
   {
-    Question: "What is coding",
+    question: "What is coding",
 
-    Answers: {
-     answer1: "A Programming Lanquage",
-     answer2: "Hard as heck",
-     answer3: "Worth Learning",
-     answer4: "You can Do"
+    answers: {
+      a: "A Programming Lanquage",
+      b: "Hard as heck",
+      c: "Worth Learning",
+      d: "You can Do"
     },
 
-    correctAnswer: "answer4"
+    correctAnswer: "d"
   },
   {
-    Question: "What is life",
+    question: "What is life",
 
-    Answers: {
-     answer1: "A Programming Lanquage",
-     answer2: "Hard as heck",
-     answer3: "Worth Learning",
-     answer4: "You can Do"
+    answers: {
+      a: "A Programming Lanquage",
+      b: "Hard as heck",
+      c: "Worth Learning",
+      d: "You can Do"
     },
 
-    correctAnswer: "answer2"
+    correctAnswer: "b"
   },
-]
+];
 
+//placeholder for questions
+var quizContainer = document.getElementById("quests-content");
+ 
+  function generateQuiz(questions, quizContainer){
+
+  //function showQuestions(questions, quizContainer){
+
+// combine questions and answers  
+var output = [];
+var answers;
+
+for(var i=0; i<questions.length; i++){
+  answers = [];
+  
+  for(letter in questions[i].answers){
+
+  answers.push(
+    '<button>' + '<name = "question' + i +'" value="' + letter + '">' + letter + ':'
+    + questions[i].answers[letter] + '</button>'
+  );
+}
+
+output.push(
+  '<div class="quests">' + questions[i].question + '</div>'
+  + '<div class="button">' + answers.join('') + '</div>'
+
+  );
+
+//shows questions and answers on page
+  quizContainer.innerHTML = output.join('')
+
+  // var showQuestions = function() {
+  //   var 
+  //   output.appendChild(quizContainer);
+  
+}
+// var quizQuestionsEl = document.createElement("button");
+// quizQuestionsEl.textContent = answers.join('');
+// quizQuestionsEl.className = "button";
+
+
+//   quizContainerEl.appendChild(quizQuestionsEl);
+};
+
+//showQuestions(questions, quizContainer); not needed?
 
 // button click to start quiz and to move to next set of questions
 //var startBtnEl = document.querySelector("#startBtn");
 //var closeIntro = document.querySelector(".intro")
-
 //var startQuiz = document.querySelector("")
 
-var highScoreHandler = function() {
-     var scoreInput = document.querySelector("input[name ='highscore']").value;
-     var initialsInput = document.querySelector("input[name='initials']").value;
-     if (scoreInput === "" || initialsInput == "") {
-         alert("You need to take the quiz to view a high score");
-         return false;
-     }
- };
+// enter high score and initials after completion
 
+function highScoreHandler() {
+  var scoreInput = document.querySelector("input[name ='highscore']").value;
+  var initialsInput = document.querySelector("input[name='initials']").value;
+  if (scoreInput === "" || initialsInput == "") {
+    alert("You need to take the quiz to view a high score");
+    return false;
+  }
+}
+ // }
 
 
 
 //var taskButtonHandler = function() {
  // get target element from event sample below to start quiz:
 
-//Intro Section -- StartPageHandler
+//Intro Section shows first on page -- need to disappear
+//var StartPageHandler
 var editIntroEl = document.querySelector("h1")
-editIntroEl.textContent = ("Coding Quiz Challenge heak yeah!")
-editIntroEl.className = (".intro")
 var editIntroParaEl = document.querySelector(".intro p")
+var startBtnEl = document.querySelector(".intro button")
+
+  
+editIntroEl.textContent = ("Coding Quiz Challenge")
+editIntroEl.className = (".intro")
 editIntroParaEl.textContent = ("Try to answer the following code-related question within the time limit.  Keep in mind incorrect answers will penalize you by 10 seconds!")
 editIntroParaEl.className = (".intro p")
 //start quiz button
-var startBtnEl = document.querySelector(".intro button")
-//startBtnEl = document.createElement("button");
-startBtnEl.textContent = ("Start Quiz in JS") 
+
+startBtnEl.textContent = ("Start Timer") 
 startBtnEl.className = ("button")
+
+//
+questContentEl = document.querySelector("#quests-content")
+questContentEl.addEventListener("click", generateQuiz);
 
 //var startBtnEl = document.querySelector("startBtnEl");
 var startQuizHandler = function (){
   alert("it works!");
  
-   //[WORKS]timer in top right corner with click
+   //sets timer in top right corner with click
   var counter = 75
   var countdown = function(event) {
     timerEl.innerHTML = counter;
@@ -110,32 +167,68 @@ var startQuizHandler = function (){
  
   var startCountdown = setInterval(countdown, 1000);
 };
-
-startBtnEl.addEventListener("click", startQuizHandler);
-
 //end countdown section
 
-  //Start Question and Answers ()
+//start quiz timer and start questions -- replace intro
+startBtnEl.addEventListener("click", startQuizHandler)
+startBtnEl.addEventListener("click", generateQuiz, quizContainer);
+
+//shows questions now -- need to set interval
+generateQuiz(Myquestions, quizContainer);
 
 
-//create 4 answers -- from module
+function showResults(questions, quizContainer, resultsContainer){
+      
+  // gather answer in container
+  var answerContainers = quizContainer.querySelectorAll('.answers');
+  
+  // keep track of user's answers
+  var userAnswer = '';
+  var numCorrect = 0;
+  
+  // for each question...
+  for(var i=0; i<questions.length; i++){
+
+    // find selected answer
+    userAnswer = (answerContainers[i].querySelector('input[name=question'+i+']:checked')).value;
+    
+    // if answer is correct
+    if(userAnswer===questions[i].correctAnswer){
+      // add to the number of correct answers
+      numCorrect++;
+    //adds points
+    }
+  }
+
+  //set up for showing score and add initials
+  //*High scores on left = link to High scores "page"
+  //page will be visible for list of high scores only
+//scores are stored in local storage - and recalled when High Scores
+//button is clicked
+//there should also be a return to main button on this page
+  submitButton.onclick = function(){
+    showResults(resultsContainer);
+  }
+
+}
 
 
-var AddAnswer = document.querySelector("#answers");
-//answersEl.document.createElement("button");
-var createAnswerHandler = function() {
-var answersEl = document.createElement("li");
-answersEl.textContent = "Question Instead?";
-answersEl.className = "button";
-var allAnswersEl = document.createElement("div");
-allAnswersEl.className = "button";
-allAnswersEl.
-allAnswersEl.innerHTML = "<h2 class='question'>" + 'Question InnerHTML' + "</h3>";
-AddAnswer.appendChild(answersEl);
+
+// var AddAnswer = document.querySelector("#answers");
+// //answersEl.document.createElement("button");
+// var createAnswerHandler = function() {
+// var answersEl = document.createElement("li");
+// answersEl.textContent = "Question Instead?";
+// answersEl.className = "button";
+// var allAnswersEl = document.createElement("div");
+// allAnswersEl.className = "button";
+// allAnswersEl.
+// allAnswersEl.innerHTML = "<h2 class='question'>" + 'Question InnerHTML' + "</h3>";
+// AddAnswer.appendChild(answersEl);
 
 
-};
-startBtnEl.addEventListener("click", createAnswerHandler);
+//};     
+//startBtnEl.addEventListener("click", createAnswerHandler);
 
 
 //actionContainerEl.appendChild(answersEl);
@@ -145,16 +238,14 @@ startBtnEl.addEventListener("click", createAnswerHandler);
 //actionContainerEl.className = (".questions");
 //create Question
 //var questionEl = document.elementSelector("ul");
-var questionEl = document.createElement("div");
-questionEl.className = "questions";
-questionEl.innerHTML = "<ul class ='question'>'</ul>";
+// var questionEl = document.createElement("div");
+// questionEl.className = "questions";
+// questionEl.innerHTML = "<ul class ='question'>'</ul>";
 //questionEl.textContent = "Question One"
 //actionContainerEl.appendChild(questionEl);
 
 //createQuestionEl();
 //};
-
-
 
 
 
@@ -170,43 +261,17 @@ questionEl.innerHTML = "<ul class ='question'>'</ul>";
 //    deleteTask(taskId);
 //  }
 
-//create questions
-// create edit button
-
-
-//answers
-
-
-//reset form fields?? may not be needed
-
-
-
-
-
-//*High scores on left = link to High scores "page"
  
-//page will be visible for list of high scores only
-//scores are stored in local storage - and recalled when High Scores
-//button is clicked
-//there should also be a return to main button on this page
 
-//*timer on right 
-//timer working -need to set up to start on button click
 
-//Intro section will show first then disappear
-//*button to start quiz
-//will cause all but header to disappear
-//will cause 1st set of questions to appear,
-//will cause timer to begin
 
-//Questions section 
-//1 questions with 4 answer button
+
 //on any buttom click the "response" will appear with right or wrong"
 //a divider line will appear befor response
 //2 seconds later next question/answer will appear and continue
 //until all answers are completed
 
-//each right answer will add value of 10
+//each right answer will add value of 25
 //each wrong answer will subtract value of -10
 // total will not go below 0
 

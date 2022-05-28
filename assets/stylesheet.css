@@ -23,7 +23,7 @@ visibility: visible;
 
 }
 
-div .questions {
+div .quests {
     list-style-type: none;
     margin: 0;
     padding: 0;
@@ -34,12 +34,12 @@ div .questions {
     visibility: visible;
 }
     
-div .questions {
+div .quests {
     display: flex;
     flex-wrap: wrap;
 }
 
-.question {
+.quests {
     font-size: large;
 }
 .intro {
@@ -54,7 +54,9 @@ div .questions {
 button {
     outline: none;
     border: none;
-    display: inline-block;
+    display: flex;
+    flex-wrap:nowrap;
+    margin: 1px;
     padding: 10px 15px;
     font-size:large;
     color: whitesmoke;
