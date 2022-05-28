@@ -81,6 +81,7 @@ for(var i=0; i<questions.length; i++){
   answers.push(
     '<button>' + '<name = "question' + i +'" value="' + letter + '">' + letter + ':'
     + questions[i].answers[letter] + '</button>'
+    
   );
 }
 
