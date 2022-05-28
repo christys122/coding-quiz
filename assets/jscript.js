@@ -7,6 +7,57 @@ var timerEl = document.querySelector("#timer");
 //var headerEl = document.querySelector(".intro h3")
 //create question button
 
+var questions = [
+  {
+    Question: "What is Javascript",
+
+    Answers: {
+     answer1: "A Programming Lanquage",
+     answer2: "Hard as heck",
+     answer3: "Worth Learning",
+     answer4: "You can Do"
+    },
+
+    correctAnswer: "answer1"
+  },
+  {
+    Question: "What does it all mean?",
+
+    Answers: {
+     answer1: "A Programming Lanquage",
+     answer2: "Hard as heck",
+     answer3: "Worth Learning",
+     answer4: "You can Do"
+    },
+
+    correctAnswer: "answer3"
+  },
+  {
+    Question: "What is coding",
+
+    Answers: {
+     answer1: "A Programming Lanquage",
+     answer2: "Hard as heck",
+     answer3: "Worth Learning",
+     answer4: "You can Do"
+    },
+
+    correctAnswer: "answer4"
+  },
+  {
+    Question: "What is life",
+
+    Answers: {
+     answer1: "A Programming Lanquage",
+     answer2: "Hard as heck",
+     answer3: "Worth Learning",
+     answer4: "You can Do"
+    },
+
+    correctAnswer: "answer2"
+  },
+]
+
 
 // button click to start quiz and to move to next set of questions
 //var startBtnEl = document.querySelector("#startBtn");
@@ -74,11 +125,15 @@ var AddAnswer = document.querySelector("#answers");
 //answersEl.document.createElement("button");
 var createAnswerHandler = function() {
 var answersEl = document.createElement("li");
-answersEl.textContent = "Answer One";
+answersEl.textContent = "Question Instead?";
 answersEl.className = "button";
-//answersEl.textContent = "Answer Two";
-//answersEl.className = "button";
+var allAnswersEl = document.createElement("div");
+allAnswersEl.className = "button";
+allAnswersEl.
+allAnswersEl.innerHTML = "<h2 class='question'>" + 'Question InnerHTML' + "</h3>";
 AddAnswer.appendChild(answersEl);
+
+
 };
 startBtnEl.addEventListener("click", createAnswerHandler);
 
