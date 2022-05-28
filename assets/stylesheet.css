@@ -37,10 +37,12 @@ div .quests {
 div .quests {
     display: flex;
     flex-wrap: wrap;
+    
 }
 
 .quests {
-    font-size: large;
+    font-size: larger;
+    font-weight: bold;
 }
 .intro {
     visibility: visible;
@@ -55,7 +57,7 @@ button {
     outline: none;
     border: none;
     display: flex;
-    flex-wrap:nowrap;
+    flex-wrap: wrap;
     margin: 1px;
     padding: 10px 15px;
     font-size:large;
@@ -64,10 +66,14 @@ button {
     position: relative;
     background: rgb(12, 89, 114);
     
+    
 }
 
 button:hover {
     box-shadow: 0 3px rgb(51, 47, 47);
+}
+
+#startbtn {
 }
 
 

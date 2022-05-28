@@ -13,52 +13,52 @@ var resultsContainer = document.getElementById("results");
 
 var Myquestions = [
   {
-    question: "What is Javascript",
+    question: "Is Javascript case sensitive?",
 
     answers: {
-     a: "A Programming Lanquage",
-     b: "Hard as heck",
-     c: "Worth Learning",
-     d: "You can Do"
+     a: "Yes",
+     b: "No",
+     c: "Depends",
+     d: "only when calling a function"
     },
 
     correctAnswer: "a"
   },
   {
-    question: "What does it all mean?",
+    question: "Where does the java script tag go in html?",
 
     answers: {
-     a: "A Programming Lanquage",
-     b: "Hard as heck",
-     c: "Worth Learning",
-     d: "You can Do"
+     a: "nav",
+     b: "footer",
+     c: "body",
+     d: "title"
     },
 
     correctAnswer: "c"
   },
   {
-    question: "What is coding",
+    question: "How do you call this function - nameFunction?",
 
     answers: {
-      a: "A Programming Lanquage",
-      b: "Hard as heck",
-      c: "Worth Learning",
-      d: "You can Do"
+      a: "nameFunction.call",
+      b: "nameFunction.getElementbyId",
+      c: "call nameFunction()",
+      d: "nameFunction()"
     },
 
     correctAnswer: "d"
   },
   {
-    question: "What is life",
+    question: "What is the use of the semi-colon in JavaScript?",
 
     answers: {
-      a: "A Programming Lanquage",
-      b: "Hard as heck",
-      c: "Worth Learning",
-      d: "You can Do"
+      a: "Seperates the statements",
+      b: "Seperates the functions",
+      c: "Ends the code for the application",
+      d: "Is only used in the HTML page"
     },
 
-    correctAnswer: "b"
+    correctAnswer: "a"
   },
 ];
 
